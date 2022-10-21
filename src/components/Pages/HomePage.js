@@ -1,9 +1,9 @@
-import React from 'react'
+import SearchBar from "../SearchBar";
 
 const HomePage = () => {
   return (
     <div className='homepage'>
-        HomePage
+        <SearchBar />
     </div>
   );
 }
