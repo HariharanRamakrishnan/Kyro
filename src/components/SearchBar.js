@@ -11,7 +11,8 @@ const SearchBar = () => {
   return (
     <div className='searchbar'>
         <form className='searchbar__form'>
-            <input type='text' placeholder='Search' 
+            <input type='text' 
+            placeholder='Search' 
             value={searchWord}
             onChange={ (e) => setSearchWord(e.target.value) } 
             />

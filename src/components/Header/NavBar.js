@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar";
 
 const NavBar = () => {
   return (
@@ -10,15 +11,16 @@ const NavBar = () => {
                 <i className="fas fa-tv"></i>KYRO TV
               </Link>
             </h3>
+            <SearchBar />
             <ul className="nav__links">
               <li className="links__link">
                 <Link to="/about">
-                  ABOUT
+                  <b>ABOUT</b>
                 </Link>
               </li>
               <li className="links__link">
               <Link to="/login">
-                LOGIN
+                <b>LOGIN</b>
               </Link>
               </li>
             </ul>        
