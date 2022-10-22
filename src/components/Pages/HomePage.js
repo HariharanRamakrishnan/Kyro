@@ -9,11 +9,7 @@ import Show from "./HomePageComponents/Show";
 const HomePage = () => {
   const [shows, setShows] = useState([]);
   const [show, setshow] = useState([]);
-  let a = 1;
-  let onclick = () => {
-    a += 1;
-    console.log(a);
-  };
+
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(`${BASE_URL}/shows`);

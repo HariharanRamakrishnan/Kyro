@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from "react";
 
 const Show = ({ show, getShow, match }) => {
   useEffect(() => {
@@ -6,16 +6,8 @@ const Show = ({ show, getShow, match }) => {
     // eslint-disable-next-line
   }, []);
 
-  const {
-    name,
-    summary,
-    image,
-    rating,
-    genres,
-    language,
-    rumtime,
-    premiered
-  } = show;
+  const { name, summary, image, rating, genres, language, rumtime, premiered } =
+    show;
 
   return (
     <div>
@@ -34,4 +26,4 @@ const Show = ({ show, getShow, match }) => {
   );
 };
 
-export default Show
+export default Show;
