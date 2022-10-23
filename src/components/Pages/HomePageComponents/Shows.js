@@ -1,4 +1,3 @@
-import { Route, Switch } from "react-router-dom";
 import ShowCard from "./ShowCard";
 
 const Shows = ({ shows }) => (

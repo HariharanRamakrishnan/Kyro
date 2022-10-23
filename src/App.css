@@ -1,0 +1,4 @@
+.kyro-react-tv>.row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../App.css"
 import axios from "axios";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { BASE_URL } from "../api";
 
 import Shows from "./HomePageComponents/Shows";
-import Show from "./HomePageComponents/Show";
+import TodayStreaming from "./HomePageComponents/TodayStreaming";
 
 const HomePage = () => {
   const [shows, setShows] = useState([]);
-  const [show, setshow] = useState([]);
+  const [today, setToday] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,13 +19,23 @@ const HomePage = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get(`${BASE_URL}/schedule`);
+      setToday(res.data);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <Router>
-      {a}
-      <div className="container" onClick={() => onclick()}>
+    <div>
+      <div>
+        <h4> Top picks for you</h4>
         <Shows shows={shows} />
+        <h4> Today Streaming</h4>
+        <TodayStreaming shows={today} />
       </div>
-    </Router>
+    </div>
   );
 };
 

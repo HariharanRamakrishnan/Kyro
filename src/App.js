@@ -1,18 +1,25 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useState } from "react";
+import axios from "axios";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Header
-import NavBar from './components/Header/NavBar';
+import NavBar from "./components/Header/NavBar";
 
 //Pages
-import HomePage from './components/Pages/HomePage';
-import AboutPage from './components/Pages/AboutPage';
-import LoginPage from './components/Pages/LoginPage';
-import Shows from "./components/Pages/HomePageComponents/Shows";
-import NewComponent from "./components/Pages/NewComponent";
-import ShowCard from "./components/Pages/HomePageComponents/ShowCard";
+import HomePage from "./components/Pages/HomePage";
+import AboutPage from "./components/Pages/AboutPage";
+import LoginPage from "./components/Pages/LoginPage";
 import Show from "./components/Pages/HomePageComponents/Show";
+import { BASE_URL } from "./components/api";
 
 const App = () => {
+
+  const [show, setShow] = useState([]);
+  const getShow = async (id) => {
+    const res = await axios.get(`${BASE_URL}/shows/${id}`);
+    setShow(res.data);
+  };
+
   return (
     <Router>
       <div className="header">
@@ -23,7 +30,12 @@ const App = () => {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/login" component={LoginPage} />
-          <Route path={"/shows/:id"} component={Show} />
+          <Route
+            path="/shows/:id"
+            render={(props) => (
+              <Show {...props} getShow={getShow} show={show} />
+            )}
+          />
         </Switch>
       </div>
     </Router>

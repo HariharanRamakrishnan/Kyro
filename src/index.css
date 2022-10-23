@@ -7,39 +7,40 @@ body {
   font-family: sans-serif;
 }
 
-.container{
-  max-width: 1170px;
+.container {
+  max-width: 1300px;
   margin: auto;
 }
 
-.navbar{
+.navbar {
   padding: 1rem;
   background: rgb(238, 221, 221);
 }
 
-.navbar__nav{
+.navbar__nav {
+  width: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar__brand a{
+.navbar__brand a {
   font-size: 1.7rem;
   color: rgb(184, 27, 27);
   text-decoration: none;
 }
 
-.navbar__brand a:hover{
+.navbar__brand a:hover {
   color: rgb(0, 0, 0);
 }
 
-.nav__links{
+.nav__links {
   display: flex;
   list-style: none;
   align-items: center;
 }
 
-.links__link a{
+.links__link a {
   display: block;
   padding: 1rem;
   color: rgb(184, 27, 27);
@@ -48,24 +49,45 @@ body {
   font-size: 15px;
 }
 
-.links__link a:hover{
+.links__link a:hover {
   color: rgb(0, 0, 0);
 }
 
-.searchbar{
+.searchbar {
   width: 100%;
   padding: 10px 180px;
   margin: 2rem 0;
 }
-
-.searchbar__form{
+.searchbar__form {
   width: 75%;
   justify-content: space-between;
 }
 
-.searchbar__form > input{
+.searchbar__form > input {
   width: 30%;
   padding: 10px 17px;
   border: 4px solid darkred;
   border-radius: 30px;
 }
+
+.card {
+  position: relative;
+    max-width: 350px;
+    margin-bottom: 20px;
+    overflow: auto;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .card a:hover {
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      cursor: pointer;
+  }
+
+  .cardswrapper{
+    display: flex;
+  }
